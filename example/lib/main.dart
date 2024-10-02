@@ -1,13 +1,15 @@
 import 'dart:developer';
-
+ 
 import 'package:flutter/material.dart';
 import 'package:flutter_glow/flutter_glow.dart';
-
+ 
 const flutterColor = Color(0xFF40D0FD);
-
-void main() => runApp(MyApp());
-
+ 
+void main() => runApp(const MyApp());
+ 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,24 +21,24 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
+ 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
-
+ 
   final String title;
-
+ 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
+ 
 class _MyHomePageState extends State<MyHomePage> {
   bool checkboxSelected = false;
   bool switchSelected = false;
   bool radioSelected = false;
   bool iconSelected = false;
-
+ 
   double sliderValue = 0;
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
             GlowButton(
               onPressed: () {},
               color: flutterColor,
-              child: Text('Glow'),
+              child: const Text('Glow'),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             GlowCheckbox(
               value: checkboxSelected,
               enable: true,
@@ -64,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             GestureDetector(
               onTap: () {
                 setState(() {
@@ -79,12 +81,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 blurRadius: 9,
               ),
             ),
-            SizedBox(height: 32),
-            GlowText(
+            const SizedBox(height: 32),
+            const GlowText(
               'Glow Text',
               style: TextStyle(fontSize: 40, color: flutterColor),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -99,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     });
                   },
                 ),
-                SizedBox(width: 32),
+                const SizedBox(width: 32),
                 GlowRadio<bool>(
                   value: false,
                   color: flutterColor,
@@ -113,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             GlowSwitch(
               onChanged: (value) {
                 setState(() {
@@ -124,8 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
               activeColor: flutterColor.withOpacity(0.6),
               blurRadius: 4,
             ),
-            SizedBox(height: 32),
-            GlowLineProgress(
+            const SizedBox(height: 32),
+            const GlowLineProgress(
               blurRadius: 12,
               glowColor: flutterColor,
             )
